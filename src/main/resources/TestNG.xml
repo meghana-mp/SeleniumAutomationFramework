@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="OrangeHRMTestSuite">
+  <test name="OrangeHRMTestCases">
+    <classes>
+      <class name="com.hrm.qa.testcases.LoginPageTest"/>
+      <class name="com.hrm.qa.testcases.HomePageTest"/>
+      <class name="com.hrm.qa.testcases.UserManagementTest"/>
+    
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
