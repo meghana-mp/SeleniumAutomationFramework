@@ -8,14 +8,23 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.hrm.qa.util.TestUtil;
+import com.hrm.qa.util.WebEventListener2;
+
+
+
 
 public class TestBase {
 	
 	public static WebDriver driver;
 	public static Properties prop;
+	public  static EventFiringWebDriver e_driver;
+	public static WebEventListener2 listener;
+	
 	
 	public TestBase() {
 		
@@ -37,12 +46,22 @@ public class TestBase {
 		String browserName=prop.getProperty("browser");
 		if(browserName.equals("chrome")) {
 			driver=new ChromeDriver();
+			//below lines for Headless Execution
+			ChromeOptions coptions =new ChromeOptions();
+			coptions.addArguments("--headless=chrome");
+			driver = new ChromeDriver(coptions);
 		}
 		else if(browserName.equals("FF")){
 			
 			driver = new FirefoxDriver();
 		}
 		
+		e_driver = new EventFiringWebDriver(driver);
+		// Now create object of EventListerHandler to register it with EventFiringWebDriver
+		listener = new WebEventListener2();
+		e_driver.register(listener);
+		driver = e_driver;
+		  
 		
 		driver.manage().window().maximize();
 		
