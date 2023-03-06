@@ -74,7 +74,7 @@ public class Select {
 		
 		//List <WebElement> listItems = driver.findElements((By) employee_autolist);
 		
-	//	/*listItems.get(0).click();
+	//	listItems.get(0).click();
 		
 	
 		

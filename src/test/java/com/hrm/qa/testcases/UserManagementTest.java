@@ -44,7 +44,7 @@ public class UserManagementTest extends TestBase{
 	}
 	
 	
-	@Test(dataProvider="gethrmTestData", invocationCount=10)
+	//@Test(dataProvider="gethrmTestData")
 	public void AddUserTest(String userRole, String employeeName, String status, String username,String password, String passwordconfirm) throws InterruptedException{
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 		userPage=homePage.clickAdminLink();

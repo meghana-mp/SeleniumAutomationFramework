@@ -23,7 +23,7 @@ public class Test {
 		Thread.sleep(3000);
 		
 		List <WebElement> list=driver.findElements(By.xpath("//ul[@class='G43f7e']/li"));
-		Thread.sleep(10000);
+		
 		
 		System.out.println(list.size());
 		

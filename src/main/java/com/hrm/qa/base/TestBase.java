@@ -45,7 +45,7 @@ public class TestBase {
 	public static void initialization() {
 		String browserName=prop.getProperty("browser");
 		if(browserName.equals("chrome")) {
-			driver=new ChromeDriver();
+			//driver=new ChromeDriver();
 			//below lines for Headless Execution
 			ChromeOptions coptions =new ChromeOptions();
 			coptions.addArguments("--headless=chrome");

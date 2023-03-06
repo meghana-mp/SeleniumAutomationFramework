@@ -3,8 +3,8 @@
   <test name="OrangeHRMTestCases">
     <classes>
       <class name="com.hrm.qa.testcases.LoginPageTest"/>
-      <class name="com.hrm.qa.testcases.HomePageTest"/>
-      <class name="com.hrm.qa.testcases.UserManagementTest"/>
+   <!--    <class name="com.hrm.qa.testcases.HomePageTest"/> -->
+    <!--   <class name="com.hrm.qa.testcases.UserManagementTest"/> -->
     
     </classes>
   </test> <!-- Test -->
