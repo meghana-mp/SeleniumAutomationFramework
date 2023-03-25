@@ -51,23 +51,23 @@ public class TestBase {
 			//below lines for Headless Execution
 			//ChromeOptions coptions =new ChromeOptions();
 			//coptions.addArguments("--headless=chrome");
-			ChromeOptions ops = new ChromeOptions();
-			ops.addArguments("--remote-allow-origins=*");
+		//	ChromeOptions ops = new ChromeOptions();
+		//	ops.addArguments("--remote-allow-origins=*");
 		       System.setProperty("webdriver.http.factory", "jdk-http-client");
 
-			//driver = new ChromeDriver();
-			driver=WebDriverManager.chromedriver().capabilities(ops).create();
+			driver = new ChromeDriver();
+			//driver=WebDriverManager.chromedriver().capabilities(ops).create();
 		}
 		else if(browserName.equals("FF")){
 			
 			driver = new FirefoxDriver();
 		}
 		
-		e_driver = new EventFiringWebDriver(driver);
+	// 	e_driver = new EventFiringWebDriver(driver);
 		// Now create object of EventListerHandler to register it with EventFiringWebDriver
-		listener = new WebEventListener2();
-		e_driver.register(listener);
-		driver = e_driver;
+	//	listener = new WebEventListener2();
+		//e_driver.register(listener);
+		//driver = e_driver;
 		  
 		
 		driver.manage().window().maximize();
