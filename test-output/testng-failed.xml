@@ -3,12 +3,13 @@
 <suite name="Failed suite [OrangeHRMTestSuite]">
   <test thread-count="5" name="OrangeHRMTestCases(failed)">
     <classes>
-      <class name="com.hrm.qa.testcases.UserManagementTest">
+      <class name="com.hrm.qa.testcases.LoginPageTest">
         <methods>
+          <include name="HRMLogoImageTest"/>
           <include name="setUp"/>
-          <include name="AddUserTest" invocation-numbers="2"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.hrm.qa.testcases.UserManagementTest -->
+      </class> <!-- com.hrm.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- OrangeHRMTestCases(failed) -->
 </suite> <!-- Failed suite [OrangeHRMTestSuite] -->

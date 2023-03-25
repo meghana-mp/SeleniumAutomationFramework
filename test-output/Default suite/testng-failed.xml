@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hrm.qa.testcases.UserManagementTest">
+      <class name="com.hrm.qa.testcases.CheckFootrLinks">
         <methods>
-          <include name="setUp"/>
-          <include name="AddUserTest" invocation-numbers="0 1 2"/>
+          <include name="test_one"/>
         </methods>
-      </class> <!-- com.hrm.qa.testcases.UserManagementTest -->
+      </class> <!-- com.hrm.qa.testcases.CheckFootrLinks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

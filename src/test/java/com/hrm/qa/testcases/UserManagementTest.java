@@ -1,11 +1,8 @@
 package com.hrm.qa.testcases;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.hrm.qa.base.TestBase;
 import com.hrm.qa.pages.HomePage;
 import com.hrm.qa.pages.LoginPage;
@@ -33,7 +30,7 @@ public class UserManagementTest extends TestBase{
 		loginPage = new LoginPage();
 	}
 	
-//	@Test
+	@Test
 	public void searchUserTest() throws InterruptedException {
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 		userPage=homePage.clickAdminLink();
@@ -44,7 +41,7 @@ public class UserManagementTest extends TestBase{
 	}
 	
 	
-	//@Test(dataProvider="gethrmTestData")
+	@Test(dataProvider="gethrmTestData")
 	public void AddUserTest(String userRole, String employeeName, String status, String username,String password, String passwordconfirm) throws InterruptedException{
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 		userPage=homePage.clickAdminLink();
@@ -54,7 +51,7 @@ public class UserManagementTest extends TestBase{
 		
 	}
 	
-	@DataProvider
+	@DataProvider()
 	public Object[][] gethrmTestData() {
 		
 	Object[][] data=TestUtil.getTestData(sheetName);

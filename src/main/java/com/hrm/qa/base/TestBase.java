@@ -15,6 +15,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import com.hrm.qa.util.TestUtil;
 import com.hrm.qa.util.WebEventListener2;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 
@@ -47,9 +49,14 @@ public class TestBase {
 		if(browserName.equals("chrome")) {
 			//driver=new ChromeDriver();
 			//below lines for Headless Execution
-			ChromeOptions coptions =new ChromeOptions();
-			coptions.addArguments("--headless=chrome");
-			driver = new ChromeDriver(coptions);
+			//ChromeOptions coptions =new ChromeOptions();
+			//coptions.addArguments("--headless=chrome");
+			ChromeOptions ops = new ChromeOptions();
+			ops.addArguments("--remote-allow-origins=*");
+		       System.setProperty("webdriver.http.factory", "jdk-http-client");
+
+			//driver = new ChromeDriver();
+			driver=WebDriverManager.chromedriver().capabilities(ops).create();
 		}
 		else if(browserName.equals("FF")){
 			

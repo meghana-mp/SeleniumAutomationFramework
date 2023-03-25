@@ -32,17 +32,17 @@ public class LoginPageTest extends TestBase {
 	@Test(priority=3)
 	public void loginPageTitleTest() {
 		String title=loginPage.validateLoginpageTitle();
-		Assert.assertEquals(title, "OrangseHRM");
+		Assert.assertEquals(title, "OrangeHRM");
 		}
 	
-	//@Test(priority=2)
+	@Test(priority=2)
 	public void HRMLogoImageTest() {
 		
 		boolean flag=loginPage.validateLogo();
 		Assert.assertTrue(flag);
 	}
 	
-	//@Test(priority=1)
+	@Test(priority=1)
 	public void LoginSuccess() {
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 	}
