@@ -53,9 +53,11 @@ public class TestBase {
 			//driver=new ChromeDriver();
 			//below lines for Headless Execution
 			ChromeOptions coptions =new ChromeOptions();
-			coptions.addArguments("--headless=chrome");
+			//coptions.addArguments("--headless=chrome");
+			coptions.addArguments("--disable-dev-shm-usage");
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
-			driver=WebDriverManager.chromedriver().capabilities(coptions).create();
+			//driver=WebDriverManager.chromedriver().capabilities(coptions).create();
+			driver= new RemoteWebDriver(new URL("http://192.168.1.23:4444/"),coptions);
 		       
 		    
 		}
