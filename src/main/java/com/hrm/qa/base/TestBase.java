@@ -57,7 +57,7 @@ public class TestBase {
 			coptions.addArguments("--disable-dev-shm-usage");
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			//driver=WebDriverManager.chromedriver().capabilities(coptions).create();
-			driver= new RemoteWebDriver(new URL("http://192.168.1.23:4444/"),coptions);
+			driver= new RemoteWebDriver(new URL("http://localhost:4444/"),coptions);
 		       
 		    
 		}
