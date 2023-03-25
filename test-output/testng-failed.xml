@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [OrangeHRMTestSuite]">
-  <test thread-count="5" name="OrangeHRMTestCases(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hrm.qa.testcases.LoginPageTest">
+      <class name="com.hrm.qa.testcases.UserManagementTest">
         <methods>
-          <include name="HRMLogoImageTest"/>
+          <include name="searchUserTest"/>
+          <include name="AddUserTest"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.hrm.qa.testcases.LoginPageTest -->
+      </class> <!-- com.hrm.qa.testcases.UserManagementTest -->
     </classes>
-  </test> <!-- OrangeHRMTestCases(failed) -->
-</suite> <!-- Failed suite [OrangeHRMTestSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
