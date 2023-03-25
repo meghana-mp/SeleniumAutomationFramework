@@ -3,6 +3,8 @@ package com.hrm.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -10,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.hrm.qa.util.TestUtil;
@@ -44,19 +47,17 @@ public class TestBase {
 		}
 	}
 	
-	public static void initialization() {
+	public static void initialization() throws MalformedURLException {
 		String browserName=prop.getProperty("browser");
 		if(browserName.equals("chrome")) {
 			//driver=new ChromeDriver();
 			//below lines for Headless Execution
-			//ChromeOptions coptions =new ChromeOptions();
-			//coptions.addArguments("--headless=chrome");
-		//	ChromeOptions ops = new ChromeOptions();
-		//	ops.addArguments("--remote-allow-origins=*");
-		       System.setProperty("webdriver.http.factory", "jdk-http-client");
-
-			driver = new ChromeDriver();
-			//driver=WebDriverManager.chromedriver().capabilities(ops).create();
+			ChromeOptions coptions =new ChromeOptions();
+			coptions.addArguments("--headless=chrome");
+			System.setProperty("webdriver.http.factory", "jdk-http-client");
+			driver=WebDriverManager.chromedriver().capabilities(coptions).create();
+		       
+		    
 		}
 		else if(browserName.equals("FF")){
 			

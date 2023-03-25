@@ -1,5 +1,7 @@
 package com.hrm.qa.testcases;
 
+import java.net.MalformedURLException;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -23,7 +25,7 @@ public class UserManagementTest extends TestBase{
 	}
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws MalformedURLException {
 		
 		initialization();
 		
